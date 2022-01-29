@@ -133,3 +133,33 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Logging
+# https://docs.djangoproject.com/en/4.0/ref/logging/#default-logging-configuration
+# Levels: NOTSET < DEBUG < INFO < WARNING < ERROR < CRITICAL
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'style': '{',
+            'format': '{asctime} - [{levelname}] {name}, line {lineno:d}: {message}',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+    },
+    'handlers': {
+        'develop': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['develop'],
+            'propagate': False,
+        }
+    }
+}

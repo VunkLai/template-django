@@ -8,3 +8,7 @@ linting:
 static-analysis:
 	# stage: analysis
 	bandit -r server
+
+security-analysis:
+	# stage: analysis
+	safety check

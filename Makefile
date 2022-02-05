@@ -12,3 +12,6 @@ static-analysis:
 security-analysis:
 	# stage: analysis
 	safety check
+
+check: linting static-analysis security-analysis
+	# stage: linting static-analysis security-analysis

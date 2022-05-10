@@ -15,6 +15,7 @@ autopep8 = "*"
 pylint-django = "*"
 bandit = "*"
 safety = "*"
+ipython = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"
